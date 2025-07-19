@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "hotel-checkin-checkout-collection",
+    "name": "Hotel Checkin Checkout API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Active Bookings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/checkin/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "checkin", ""]
+        }
+      }
+    },
+    {
+      "name": "Check-in",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"roomNumber\": \"101\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/checkin/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "checkin", ""]
+        }
+      }
+    },
+    {
+      "name": "Check-out",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"bookingId\": \"PASTE_BOOKING_ID_HERE\",\n  \"amenities\": [\n    { \"amenityId\": \"PASTE_AMENITY_ID_HERE\", \"condition\": \"good\" }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/checkin/checkout",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "checkin", "checkout"]
+        }
+      }
+    },
+    {
+      "name": "Get Booking Details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/checkin/PASTE_BOOKING_ID_HERE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "checkin", "PASTE_BOOKING_ID_HERE"]
+        }
+      }
+    },
+    {
+      "name": "Get Amenities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/amenity/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "amenity", ""]
+        }
+      }
+    },
+    {
+      "name": "Update Amenity Condition",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"condition\": \"damaged\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/amenity/PASTE_AMENITY_ID_HERE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "amenity", "PASTE_AMENITY_ID_HERE"]
+        }
+      }
+    }
+  ]
+} 
